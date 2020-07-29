@@ -28,6 +28,6 @@ export function kali(a,b) {
     return a * b;
 }
 
-export function bagi(a,b) {
+export default function bagi(a,b) {
     return a / b;
 }

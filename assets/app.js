@@ -4,6 +4,7 @@
 
 // var aritmatika = require('./aritmatika');
 import bagi, {tambah,kali,kurang} from 'aritmatika';
+// import * from './aritmatika';
 
 var a = 10, b = 3;
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <p>Anda sudah menekan tombol sebanyak <span id="count"></span> kali</p>
+    <button id="button">CLick Disini !!</button>
+
+    <script>
+        const cacheKey = "NUMBER";
+        if (typeof(Storage) !== "undefined") {
+            
+
+            // cek apakah data session storage key NUMBER tersedia atau belum 
+            if (sessionStorage.getItem(cacheKey) === "undefined") {
+                //kalau belum ada maka atur aja dengan nilai 0
+                sessionStorage.setItem(cacheKey,0);
+            }
+
+            const button = document.querySelector("#button");
+            const count = document.querySelector("#count");
+
+            button.addEventListener('click' , function (event) {
+                
+                let number = sessionStorage.getItem(cacheKey);
+                number++;
+
+                sessionStorage.setItem(cacheKey,number);
+                count.innerText = sessionStorage.getItem(cacheKey);
+            })
+        } else {
+            alert("Browser tidak mendukung Session Storage !");
+        }
+    </script>
+</body>
+</html>

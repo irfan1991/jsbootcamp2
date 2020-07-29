@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manupulasi Element</title>
+</head>
+<body>
+    <div id="test">
+
+    </div>
+    <figure>
+        <img id="profileImg" alt="Logo Istar" width="600px" src="./assets/poto.png"/>
+        <figcaption id="caption">Poto GUe</figcaption>
+    </figure>
+</body>
+
+<script>
+    let profileImg = document.querySelector("#profileImg");
+    let caption = document.querySelector("#caption");
+    profileImg.setAttribute("src", "https://www.istarindonesia.com/assets/front/img/core-img/logo.png");
+     caption.innerHTML = "<em>Logo Istar Indonesia </em>";
+    // caption.innerText = "<em>Logo Istar Indonesia </em>";
+    let newElement = document.createElement('p');
+    newElement.innerHTML = "Anda menekan gambar sebanyak <span id='count'>0</span> kali";
+    document.body.appendChild(newElement);
+    profileImg.addEventListener('click', function (event) {
+        document.querySelector("#count").innerText++;
+    });
+    let test = document.querySelector("#test");
+
+    test.appendChild(newElement);
+</script>
+</html>
