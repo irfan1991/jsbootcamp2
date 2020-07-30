@@ -63,7 +63,20 @@ function perfomCalculation() {
         result = parseInt(calculator.firstNumber) - parseInt(calculator.displayNumber);
     }
 
+    // c
+
+    // objek yang dikiri ke putHistory yang di storage.js
+    const history = {
+        firstNumber : calculator.firstNumber,
+        secondNumber : calculator.displayNumber,
+        operator : calculator.operator,
+        result : result
+    }
+
+    console.log(history);
+    putHistory(history);
     calculator.displayNumber = result;
+    renderHistory();
 }
 
 const buttons = document.querySelectorAll(".button");
